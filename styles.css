@@ -1,50 +1,76 @@
+* {
+    font-family: 'Mukta', sans-serif;
+}
 
-body{
-    padding: 0;
+body {
     margin: 0;
+    background-color: #6d6875;
 }
-.pantalla{
+
+.container {
     display: flex;
-    align-content: flex-end;
-    justify-content: space-around;
-    margin-top: 10%;
-    
-}
-
-.calculadora{
-    display: grid;
     justify-content: center;
-    align-content: center;
-    grid-template-columns: repeat(5, 50px); /*5 columnas de 50px*/
-    grid-template-rows: minmax(50px, auto) repeat(5, 50px); /*tamaño de 50px repetido 5 veces*/
-    min-height: 35vh;
-   
-}
-
-.calculadora > button{
-    cursor: pointer;
-    border-radius: 10%;
+    align-items: center;
+    height: 100vh;
+    
 
 }
 
-.boton-igual > button{
-    width: 50px;
-    height: 100px;
-    cursor: pointer;
-    border-radius: 10%;
+.calculadora {
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: 160px repeat(5, 80px);
+    background-color: #e5989b;
+    padding: 15px;
+    border-radius: 30px;
+    box-shadow: 15px 10px 0px 5px;
+    /* box-shadow: eje x, eje y, opacidad, anchura, color(opcional) */
 }
 
-.boton-cero > button{
-    width: 100px;
-    height: 50px;
+button {
     cursor: pointer;
-    border-radius: 10%;
+    margin: 5px;
+    padding: 0;
+    border-radius: 20px;
+    border: none;
+    font-size: 1.5em;
+    background-color: #e5989b;
+    box-shadow: 3px 1px 0px 1px #000000, -3px -1px 0px 1px #ffffff15;
 }
 
-.boton-punto > button{
-    width: 50px;
-    height: 50px;
-    margin-left: 50px;
-    cursor: pointer;
-    border-radius: 10%;
+button:active {
+    background-color: #FFCDB2;
+}
+
+
+.row-2 {
+   grid-row: span 2;
+}
+
+.col-2 {
+    grid-column: span 2;
+}
+
+.display {
+    grid-column: 1 / -1;
+    padding: 16px;
+    display: flex;
+    margin: 10px 10px 20px;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #FFCDB2;
+    border-radius: 20px;
+    text-align: right;
+    /* space-between agrega espacio entre los valores del display */
+    justify-content: space-between;
+    word-break: break-all;
+    box-shadow: 0px 0px 0px 5px;
+}
+
+#valor-actual {
+    font-size: 1.5em;
+}
+
+#valor-anterior {
+    font-size: 2em;
 }
